@@ -22,7 +22,7 @@ function valuesOnDay(y0: Y, days: number, step: number = 1): Y {
 type Y = Array<number>;
 
 export function calculateBeta(gammaTest: number, infectedAfterDelta: number, daysDelta: number, population: number, initialInfected: number = 1, step: number = 0.01): number {
-    return 0.22;
+    return 0.16;
 
     const I0 = initialInfected / population; // initial % of infected
 
