@@ -26,7 +26,7 @@ function App() {
             <div className="mx-4">
                 {locations && (
                     <>
-                        <SirCalculator locations={locations}/>
+                        {/*<SirCalculator locations={locations}/>*/}
                         <StatsTable locations={locations}/>
                     </>
                 )}

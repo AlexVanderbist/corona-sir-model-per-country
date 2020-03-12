@@ -14,21 +14,21 @@ function valuesOnDay(y0: Y, days: number, step: number = 1): Y {
 
     let integrator = rk4(y0, sir, day0, step);
 
-    integrator = integrator.steps(days);
+    integrator = integrator.steps(days / step);
 
     return integrator.y;
 }
 
 type Y = Array<number>;
 
-export function calculateBeta(gammaTest: number, infectedAfterDelta: number, daysDelta: number, population: number, initialInfected: number = 1): number {
-    const I0 = initialInfected / population; // initial number of infected
+export function calculateBeta(gammaTest: number, infectedAfterDelta: number, daysDelta: number, population: number, initialInfected: number = 1, step: number = 0.01): number {
+    const I0 = initialInfected / population; // initial % of infected
 
     for (let betaTest = 0.01; betaTest < 2.0; betaTest += 0.01) {
         beta = betaTest;
         gamma = gammaTest;
 
-        let [susceptible, infected, recovered] = valuesOnDay([1.0 - I0, I0, 0.0], daysDelta, 1);
+        let [susceptible, infected, recovered] = valuesOnDay([1.0 - I0, I0, 0.0], daysDelta, step);
 
         if (population * (infected + recovered) >= infectedAfterDelta) {
             break
@@ -74,7 +74,7 @@ export function calculateLocationStats(location: App.LocationData): App.Location
 
     const [day0, infectionsOnDay0] = Object.entries(location.history).find(([day, value]) => Number(value) !== 0) || ['unknown', '1'];
 
-    const beta = calculateBeta(recoveryRate, location.latest, daysSinceFirstInfection, population, Number(infectionsOnDay0));
+    const beta = calculateBeta(recoveryRate, location.latest, daysSinceFirstInfection, population, Number(infectionsOnDay0), 0.01);
 
     const infectionsPerDay = calculateInfectionsPerDay(beta, recoveryRate);
 
