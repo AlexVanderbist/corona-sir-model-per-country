@@ -16,7 +16,7 @@ export default function StatsRow({location: {id, country, daysSinceFirstInfectio
             <td style={tabularNums} className="text-right px-3">{daysSinceFirstInfection}</td>
             <td style={tabularNums} className="text-right px-3">{beta?.toFixed(2)}</td>
             <td className="px-3">{peakInfectionDay}</td>
-            <td className="px-3">{(peakInfected / population).toFixed(2)}%</td>
+            <td className="px-3">{Math.round((peakInfected / population) * 100)}%</td>
             <td className="px-3">{Math.round(peakInfected)}</td>
             <td style={tabularNums} className="text-right px-3">{population}</td>
         </tr>
