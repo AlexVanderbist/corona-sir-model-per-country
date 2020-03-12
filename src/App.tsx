@@ -24,6 +24,8 @@ function App() {
     return (
         <div className="flex justify-center">
             <div className="mx-4">
+                <p className="my-3 text-lg">Expected infection rate based on cruise ship case is <strong>0.16</strong></p>
+                <p className="my-3 text-lg">Expected R0 based on cruise ship case is <strong>2.28</strong></p>
                 {locations && (
                     <>
                         {/*<SirCalculator locations={locations}/>*/}

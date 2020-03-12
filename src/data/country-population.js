@@ -216,7 +216,7 @@ export default [
         "population": "1179551"
     },
     {
-        "country": "Czech Republic",
+        "country": "Czechia",
         "population": "10618303"
     },
     {
@@ -372,7 +372,7 @@ export default [
         "population": null
     },
     {
-        "country": "Holy See (Vatican City State)",
+        "country": "Holy See",
         "population": "1000"
     },
     {
@@ -708,7 +708,7 @@ export default [
         "population": "19679306"
     },
     {
-        "country": "Russian Federation",
+        "country": "Russia",
         "population": "143989754"
     },
     {
@@ -764,6 +764,10 @@ export default [
         "population": "94737"
     },
     {
+        "country": "Serbia",
+        "population": "7000000"
+    },
+    {
         "country": "Sierra Leone",
         "population": "7557212"
     },
@@ -796,7 +800,7 @@ export default [
         "population": null
     },
     {
-        "country": "South Korea",
+        "country": "Korea, South",
         "population": "50982212"
     },
     {
@@ -808,7 +812,7 @@ export default [
         "population": "46354321"
     },
     {
-        "country": "SriLanka",
+        "country": "Sri Lanka",
         "population": "20876917"
     },
     {

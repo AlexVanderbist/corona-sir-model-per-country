@@ -19,5 +19,6 @@ namespace App {
         population: number;
         peakInfectionDay: number;
         peakInfected: number;
+        rNaught: number;
     }
 }

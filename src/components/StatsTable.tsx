@@ -6,7 +6,7 @@ type Props = {
 };
 
 export default function StatsTable({locations}: Props) {
-    locations = locations.sort((l1, l2) => l2?.beta - l1?.beta).filter(l => l.beta < 1.0);
+    locations = locations.sort((l1, l2) => l2?.latest - l1?.latest).filter(l => l.beta < 1.0);
 
     return (
         <table className="text-right">
@@ -17,6 +17,7 @@ export default function StatsTable({locations}: Props) {
                 <th className="px-3">Confirmed infections</th>
                 <th className="px-3">Days since first infection</th>
                 <th className="px-3">Infection rate</th>
+                <th className="px-3">R0</th>
                 <th className="px-3">Peak after days</th>
                 <th className="px-3">% infected at peak</th>
                 <th className="px-3">Peak infected</th>
