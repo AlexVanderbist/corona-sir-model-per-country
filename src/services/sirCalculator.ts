@@ -55,8 +55,8 @@ export function calculateLocationStats(location: App.LocationData): App.Location
 
     const population = Number(countryPopulations.find(c => c.country === location.country)?.population);
 
-    let [day0, infectionsOnDay0] = Object.entries(location.history).find(([day, value]) => Number(value) !== 0) || ['unknown', '1'];
-    infectionsOnDay0 = Number(infectionsOnDay0);
+    const day0 = Object.entries(location.history).find(([day, value]) => Number(value) !== 0) || ['unknown', '1'];
+    const infectionsOnDay0 = Number(day0[1]);
 
     const rNaught = Math.pow(location.latest, 1/(daysSinceFirstInfection));
 
