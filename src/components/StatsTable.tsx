@@ -12,15 +12,15 @@ export default function StatsTable({locations}: Props) {
         <table className="text-right">
             <thead>
             <tr>
-                <th>#</th>
-                <th className="text-left">Country</th>
-                <th>Confirmed infections</th>
-                <th>Days since first infection</th>
-                <th>Infection rate</th>
-                <th>Peak after days</th>
-                <th>% infected at peak</th>
-                <th>Peak infected</th>
-                <th>Population</th>
+                <th className="px-3">#</th>
+                <th className="px-3 text-left">Country</th>
+                <th className="px-3">Confirmed infections</th>
+                <th className="px-3">Days since first infection</th>
+                <th className="px-3">Infection rate</th>
+                <th className="px-3">Peak after days</th>
+                <th className="px-3">% infected at peak</th>
+                <th className="px-3">Peak infected</th>
+                <th className="px-3">Population</th>
             </tr>
             </thead>
             <tbody>
