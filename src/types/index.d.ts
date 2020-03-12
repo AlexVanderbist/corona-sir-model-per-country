@@ -20,5 +20,6 @@ namespace App {
         peakInfectionDay: number;
         peakInfected: number;
         rNaught: number;
+        infectionsOnDay0: number;
     }
 }

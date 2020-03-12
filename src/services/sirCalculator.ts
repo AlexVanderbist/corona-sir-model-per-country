@@ -55,9 +55,10 @@ export function calculateLocationStats(location: App.LocationData): App.Location
 
     const population = Number(countryPopulations.find(c => c.country === location.country)?.population);
 
-    const [day0, infectionsOnDay0] = Object.entries(location.history).find(([day, value]) => Number(value) !== 0) || ['unknown', '1'];
+    let [day0, infectionsOnDay0] = Object.entries(location.history).find(([day, value]) => Number(value) !== 0) || ['unknown', '1'];
+    infectionsOnDay0 = Number(infectionsOnDay0);
 
-    const rNaught = Math.pow(location.latest, 1/(daysSinceFirstInfection-1));
+    const rNaught = Math.pow(location.latest, 1/(daysSinceFirstInfection));
 
     const beta = rNaught * gamma;
 
@@ -77,6 +78,7 @@ export function calculateLocationStats(location: App.LocationData): App.Location
         daysSinceFirstInfection,
         population,
         beta,
+        infectionsOnDay0,
         rNaught,
         peakInfectionDay: peakInfection.day,
         peakInfected: peakInfection.infected * population,
