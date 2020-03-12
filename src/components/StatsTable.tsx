@@ -18,7 +18,7 @@ export default function StatsTable({locations}: Props) {
                 <th>Days since first infection</th>
                 <th>Infection rate</th>
                 <th>Peak after days</th>
-                <th>% infected of population</th>
+                <th>% infected at peak</th>
                 <th>Peak infected</th>
                 <th>Population</th>
             </tr>
