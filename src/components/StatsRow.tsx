@@ -5,17 +5,17 @@ type Props = {
     location: App.LocationStats;
 };
 
-export default function StatsRow({location: {id, country, daysSinceFirstInfection, beta, population, confirmed, peakInfected, peakInfectionDay, rNaught }, rank}: Props) {
+export default function StatsRow({location: {id, country, daysSinceFirst100Infected, beta, population, confirmed, peakInfected, peakInfectionDay, rNaught }, rank}: Props) {
     const tabularNums = {fontVariantNumeric: 'tabular-nums'};
 
-    const hasData = daysSinceFirstInfection > 1 && confirmed > 1;
+    const hasData = daysSinceFirst100Infected > 1 && confirmed > 1;
 
     return (
         <tr key={id}>
             <td className="px-3">{rank}</td>
             <td className="text-left px-3">{country}</td>
             <td style={tabularNums} className="text-right px-3">{confirmed}</td>
-            <td style={tabularNums} className="text-right px-3">{daysSinceFirstInfection}</td>
+            <td style={tabularNums} className="text-right px-3">{daysSinceFirst100Infected}</td>
             <td style={tabularNums} className="text-right px-3">{beta?.toFixed(2)}</td>
             {hasData ? (
                 <>

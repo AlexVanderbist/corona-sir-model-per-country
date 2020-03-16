@@ -51,14 +51,11 @@ function calculateInfectionsPerDay(betaTest: number, gammaTest: number, day0 = 1
 export function calculateLocationStats(location: App.LocationData): App.LocationStats {
     const recoveryRate = 1 / 14;
 
-    const daysSinceFirstInfection = Object.entries(location.history).filter(([day, confirmed]) => Number(confirmed) > 0).length;
+    const daysSinceFirst100Infected = Object.entries(location.history).filter(([day, confirmed]) => Number(confirmed) > 100).length;
 
     const population = Number(countryPopulations.find(c => c.country === location.country)?.population);
 
-    const day0 = Object.entries(location.history).find(([day, value]) => Number(value) !== 0) || ['unknown', '1'];
-    const infectionsOnDay0 = Number(day0[1]);
-
-    const rNaught = Math.pow(location.latest, 1/(daysSinceFirstInfection));
+    const rNaught = Math.pow(location.latest, 1/(daysSinceFirst100Infected));
 
     const beta = rNaught * gamma;
 
@@ -75,10 +72,9 @@ export function calculateLocationStats(location: App.LocationData): App.Location
     return {
         ...location,
         recoveryRate,
-        daysSinceFirstInfection,
+        daysSinceFirst100Infected,
         population,
         beta,
-        infectionsOnDay0,
         rNaught,
         peakInfectionDay: peakInfection.day,
         peakInfected: peakInfection.infected * population,

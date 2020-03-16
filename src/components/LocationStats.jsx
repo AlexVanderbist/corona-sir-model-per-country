@@ -2,9 +2,9 @@ import React from 'react';
 import {calculateLocationStats} from "../services/sirCalculator";
 
 export default function LocationStats({location}) {
-    const { daysSinceFirstInfection, beta, population } = calculateLocationStats(location);
+    const { daysSinceFirst100Infected, beta, population } = calculateLocationStats(location);
 
     return (
-        <div>days since first infection: {daysSinceFirstInfection} and beta {beta}, population {population}</div>
+        <div>days since first infection: {daysSinceFirst100Infected} and beta {beta}, population {population}</div>
     );
 }

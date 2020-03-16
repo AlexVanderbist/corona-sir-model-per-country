@@ -15,7 +15,7 @@ export default function StatsTable({locations}: Props) {
                 <th className="px-3">#</th>
                 <th className="px-3 text-left">Country</th>
                 <th className="px-3">Confirmed infections</th>
-                <th className="px-3">Days since first infection</th>
+                <th className="px-3">Days since first 100 infected</th>
                 <th className="px-3">Infection rate</th>
                 <th className="px-3">R0</th>
                 <th className="px-3">Peak after days</th>

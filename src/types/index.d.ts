@@ -12,7 +12,7 @@ namespace App {
 
     type LocationStats = LocationData & {
         recoveryRate: number;
-        daysSinceFirstInfection: number;
+        daysSinceFirst100Infected: number;
         population: number;
         beta: number;
         confirmed: number;
@@ -20,6 +20,5 @@ namespace App {
         peakInfectionDay: number;
         peakInfected: number;
         rNaught: number;
-        infectionsOnDay0: number;
     }
 }
